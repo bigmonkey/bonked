@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Bongko</title>
+	<% if content_for?(:seotags) %>
+	<%= yield :seotags %>
+	<% else %>
+	<title>Bongko: Simple Rewards</title>
+	<meta name="description" content="Bongko turns every card into a rewards card. Earn cash back on all your existing debit cards, credit cards and prepaid cards."/>
+	<% end %>
+	<% if content_for?(:followtags) %>
+	<%= yield :followtags %>
+	<% end %>
+	
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>

@@ -1,4 +1,14 @@
 Bongko::Application.routes.draw do
+  resources :users
+
+  root to: 'infos#home'
+
+  match "/home", to: 'infos#home',        via: 'get'
+  match "/about", to: 'infos#about',      via: 'get'
+  match "/contact", to: 'infos#contact',  via: 'get'
+  match "/signup", to: 'users#new',        via: 'get'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
